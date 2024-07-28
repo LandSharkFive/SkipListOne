@@ -8,7 +8,7 @@ The is a C# Console-Mode Project.  Open with  Visual Studio 2022 and above to co
 
 ## Description:
 
-A Skip List contains a sorted linked list.  You can Insert, Delete and Print keys.  Supports duplicate keys.  A Skip List is like a balanced tree.  A skip list is easy to code.
+A Skip List is a sorted linked list.  You can Insert, Delete and Print keys.  Supports duplicate keys.  A Skip List is like a balanced tree.  A skip list is easy to code.
 
 ## Unit Tests
 
