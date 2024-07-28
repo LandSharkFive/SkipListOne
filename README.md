@@ -14,6 +14,14 @@ A Skip List is a sorted linked list.  You can Insert, Delete and Print keys.  Su
 
 Unit Tests are included. 
 
+## Performance
+
+Keys | Time 
+--- | --- 
+1K | 0.6 ms
+10K | 5 ms
+100K | 72 ms
+
 ## References
 
 1. Pugh, William, “Skip Lists: A Probabilistic Alternative to Balanced Trees,” Communications of the ACM 33(6), (1990), 668-676.
