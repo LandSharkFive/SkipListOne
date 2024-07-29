@@ -3,7 +3,7 @@ namespace SkipListOne
 {
     public class SkipList
     {
-        // Handles duplicates.
+        // Allows duplicates.
 
         private const int MAXLEVEL = 10;
         private const double EXPECTED = 0.1;
@@ -16,7 +16,7 @@ namespace SkipListOne
         /// </summary>
         public void Insert(int value)
         {
-            int level = GetRandomLevel();
+            int level = RandomLevel();
 
             // Insert newNode into the skip list
             Node newNode = new Node(value, level + 1);
@@ -42,7 +42,7 @@ namespace SkipListOne
         }
 
         // Get Random Level with a 10% probability.
-        private int GetRandomLevel()
+        private int RandomLevel()
         {
             int level = 0;
             while (level < MAXLEVEL && Rand.NextDouble() < EXPECTED)
@@ -55,7 +55,7 @@ namespace SkipListOne
 
         public void Clear()
         {
-            Head = new Node(0, MAXLEVEL);
+            Array.Clear(Head.Next);
         }
 
         public bool IsEmpty()
