@@ -183,5 +183,52 @@ namespace SkipListOne
             return list;
         }
 
+        /// <summary>
+        /// Show each level in the skip list.
+        /// </summary>
+        public void ShowLevel()
+        {
+            for (int i = MAXLEVEL - 1; i >= 0; i--)
+            {
+                if (Head.Next[i] != null)
+                {
+                    Console.WriteLine("Level " + i);
+                    Node cur = Head.Next[i];
+                    while (cur != null)
+                    {
+                        Console.Write(cur.Value);
+                        Console.Write(" ");
+                        cur = cur.Next[i];
+                    }
+                    Console.WriteLine();
+                    Console.WriteLine();
+                }
+            }
+        }
+
+
+        /// <summary>
+        /// Show the count for each level.
+        /// </summary>
+        public void ShowCount()
+        {
+            Console.WriteLine("Level Count");
+            for (int i = MAXLEVEL - 1; i >= 0; i--)
+            {
+                if (Head.Next[i] != null)
+                {
+                    int k = 0;
+                    Node cur = Head.Next[i];
+                    while (cur != null)
+                    {
+                        ++k;
+                        cur = cur.Next[i];
+                    }
+                    Console.WriteLine("{0} {1}", i, k);
+                }
+            }
+        }
+
+
     }
 }
