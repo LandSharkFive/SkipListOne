@@ -212,21 +212,24 @@ namespace SkipListOne
         /// </summary>
         public void ShowCount()
         {
-            Console.WriteLine("Level Count");
-            for (int i = MAXLEVEL - 1; i >= 0; i--)
+            for (int i = 0; i < MAXLEVEL; i++)
             {
-                if (Head.Next[i] != null)
+                if (Head.Next[i] == null)
                 {
-                    int k = 0;
-                    Node cur = Head.Next[i];
-                    while (cur != null)
-                    {
-                        ++k;
-                        cur = cur.Next[i];
-                    }
-                    Console.WriteLine("{0} {1}", i, k);
+                    break;
                 }
+
+                int k = 0;
+                Node cur = Head.Next[i];
+                while (cur != null)
+                {
+                    ++k;
+                    cur = cur.Next[i];
+                }
+                Console.Write(k);
+                Console.Write(" ");
             }
+            Console.WriteLine();
         }
 
 
